@@ -31,7 +31,7 @@ function PageAccueil({ onSuivant }) {
           </div>
           <div className="relative">
             <div className="absolute -bottom-6 -left-6 w-72 h-72 bg-orange-200 rounded-full blur-3xl opacity-60"></div>
-            <img src="page1.jpeg" alt="Lecture" className="relative z-10 rounded-3xl shadow-2xl object-cover w-full h-[450px]" loading="lazy" />
+            <img src="/page1.jpeg" alt="Lecture" className="relative z-10 rounded-3xl shadow-2xl object-cover w-full h-[450px]" loading="lazy" />
           </div>
         </div>
       </main>
@@ -90,7 +90,9 @@ function PageAuth({ onRetour, onConnexionReussie }) {
       <button onClick={onRetour} className="absolute top-6 left-6 flex items-center gap-2 text-gray-600 hover:text-orange-500">← Retour</button>
       <div className="bg-white rounded-2xl shadow-xl w-full max-w-4xl overflow-hidden flex flex-col md:flex-row">
         <div className="hidden md:block md:w-1/2 bg-gray-200"><div className="hidden md:block md:w-1/2 bg-gray-200"><div className="hidden md:block md:w-1/2 bg-gray-200 relative">
-  <img src="image-login.jpeg" alt="Illustration" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+  <div className="hidden md:flex md:w-1/2 bg-gray-200">
+  <img src="/image-login.jpeg" alt="Illustration" className="w-full h-full object-cover" loading="lazy" />
+</div>
 </div>
 </div>
 </div>
