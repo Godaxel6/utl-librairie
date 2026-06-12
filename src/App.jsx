@@ -31,6 +31,7 @@ function PageAccueil({ onSuivant }) {
           </div>
           <div className="relative">
             <div className="absolute -bottom-6 -left-6 w-72 h-72 bg-orange-200 rounded-full blur-3xl opacity-60"></div>
+            {/* CORRECTION : h-[450px] sans espace pour Tailwind CSS */}
             <img src="/page1.jpeg" alt="Lecture" className="relative z-10 rounded-3xl shadow-2xl object-cover w-full h-[450px]" loading="lazy" />
           </div>
         </div>
@@ -40,6 +41,7 @@ function PageAccueil({ onSuivant }) {
   );
 }
 
+// COMPOSANT 2 : PAGE D'AUTHENTIFICATION 
 // COMPOSANT 2 : PAGE D'AUTHENTIFICATION 
 function PageAuth({ onRetour, onConnexionReussie }) {
   const [vueActuelle, setVueActuelle] = useState('register');
@@ -89,13 +91,10 @@ function PageAuth({ onRetour, onConnexionReussie }) {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <button onClick={onRetour} className="absolute top-6 left-6 flex items-center gap-2 text-gray-600 hover:text-orange-500">← Retour</button>
       <div className="bg-white rounded-2xl shadow-xl w-full max-w-4xl overflow-hidden flex flex-col md:flex-row">
-        <div className="hidden md:block md:w-1/2 bg-gray-200"><div className="hidden md:block md:w-1/2 bg-gray-200"><div className="hidden md:block md:w-1/2 bg-gray-200 relative">
-  <div className="hidden md:flex md:w-1/2 bg-gray-200">
-  <img src="/image-login.jpeg" alt="Illustration" className="w-full h-full object-cover" loading="lazy" />
-</div>
-</div>
-</div>
-</div>
+        
+        {/* CORRECTION FINALE : L'image est placée directement comme élément et s'ajuste parfaitement */}
+        <img src="/image-login.jpeg" alt="Illustration" className="hidden md:block md:w-1/2 object-cover" loading="lazy" />
+        
         <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
           
           {vueActuelle === 'register' && (
@@ -140,7 +139,6 @@ function PageAuth({ onRetour, onConnexionReussie }) {
             </div>
           )}
           
-          {/* TON NOUVEAU MESSAGE D'ATTENTE EST ICI */}
           {vueActuelle === 'pending' && (
             <div className="text-center py-8">
               <div className="text-5xl mb-4">⏳</div>
@@ -154,7 +152,6 @@ function PageAuth({ onRetour, onConnexionReussie }) {
     </div>
   );
 }
-
 //COMPOSANT 3 : LE CATALOGUE (Avec affichage en grille style "Netflix")
 function PageCatalogue({ onDeconnexion }) {
   const [domaineActif, setDomaineActif] = useState(null);
