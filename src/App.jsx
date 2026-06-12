@@ -89,7 +89,11 @@ function PageAuth({ onRetour, onConnexionReussie }) {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <button onClick={onRetour} className="absolute top-6 left-6 flex items-center gap-2 text-gray-600 hover:text-orange-500">← Retour</button>
       <div className="bg-white rounded-2xl shadow-xl w-full max-w-4xl overflow-hidden flex flex-col md:flex-row">
-        <div className="hidden md:block md:w-1/2 bg-gray-200"><div className="hidden md:block md:w-1/2 bg-gray-200"><img src="image-login.jpeg" alt="Illustration" className="w-full h-full object-cover" loading="lazy" /></div></div>
+        <div className="hidden md:block md:w-1/2 bg-gray-200"><div className="hidden md:block md:w-1/2 bg-gray-200"><div className="hidden md:block md:w-1/2 bg-gray-200 relative">
+  <img src="image-login.jpeg" alt="Illustration" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+</div>
+</div>
+</div>
         <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
           
           {vueActuelle === 'register' && (
