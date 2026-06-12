@@ -31,7 +31,7 @@ function PageAccueil({ onSuivant }) {
           </div>
           <div className="relative">
             <div className="absolute -bottom-6 -left-6 w-72 h-72 bg-orange-200 rounded-full blur-3xl opacity-60"></div>
-            <img src="page1.jpeg" alt="Lecture" className="relative z-10 rounded-3xl shadow-2xl object-cover w-full h-[450px]" />
+            <img src="page1.jpeg" alt="Lecture" className="relative z-10 rounded-3xl shadow-2xl object-cover w-full h-[450px]" loading="lazy" />
           </div>
         </div>
       </main>
@@ -89,7 +89,7 @@ function PageAuth({ onRetour, onConnexionReussie }) {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <button onClick={onRetour} className="absolute top-6 left-6 flex items-center gap-2 text-gray-600 hover:text-orange-500">← Retour</button>
       <div className="bg-white rounded-2xl shadow-xl w-full max-w-4xl overflow-hidden flex flex-col md:flex-row">
-        <div className="hidden md:block md:w-1/2 bg-gray-200"><img src="image-login.jpeg" alt="Illustration" className="w-full h-full object-cover" /></div>
+        <div className="hidden md:block md:w-1/2 bg-gray-200"><div className="hidden md:block md:w-1/2 bg-gray-200"><img src="image-login.jpeg" alt="Illustration" className="w-full h-full object-cover" loading="lazy" /></div></div>
         <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
           
           {vueActuelle === 'register' && (
@@ -99,7 +99,7 @@ function PageAuth({ onRetour, onConnexionReussie }) {
                 <input name="nom" type="text" placeholder="Nom complet" required className="w-full p-2.5 border rounded-lg" />
                 <input name="email" type="email" placeholder="Email" required className="w-full p-2.5 border rounded-lg" />
                 <input name="mot_de_passe" type="password" placeholder="Mot de passe (8+ car, 1 Maj, 1 Chiffre)" required minLength="8" className="w-full p-2.5 border rounded-lg" />
-                <div className="p-4 border-2 border-dashed rounded-xl bg-orange-50/50"><label className="block text-sm font-medium mb-2">📸 Carte d'étudiant</label><input name="carte_etudiant" type="file" accept="image/*" required className="w-full text-sm" /></div>
+                <div className="p-4 border-2 border-dashed rounded-xl bg-orange-50/50"><label className="block text-sm font-medium mb-2"> Carte d'étudiant</label><input name="carte_etudiant" type="file" accept="image/*" required className="w-full text-sm" /></div>
                 <button type="submit" className="w-full py-3 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition">S'inscrire</button>
               </form>
               <p className="mt-5 text-center text-sm">Déjà inscrit ? <button onClick={() => setVueActuelle('login')} className="text-orange-600 font-bold hover:underline">Se connecter</button></p>
